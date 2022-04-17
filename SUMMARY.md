@@ -1,6 +1,6 @@
 # Table of contents
 
-- [What is SolMeet?](README.md)
+- [About Us](about.md)
 
 ## Notes
 
