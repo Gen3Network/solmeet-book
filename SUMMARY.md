@@ -1,6 +1,6 @@
 # Table of contents
 
-- [About Us](about.md)
+- [About Us](README.md)
 
 ## Notes
 
