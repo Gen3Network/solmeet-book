@@ -1,10 +1,12 @@
 # Let’s BUIDL a Swap UI on Solana in 2 Hours
 
-[![hackmd-github-sync-badge](https://hackmd.io/8Gj3asHWQKW4NhAp8jeTyg/badge)](https://hackmd.io/8Gj3asHWQKW4NhAp8jeTyg)
+**Authors:** [@SaiyanBs](https://twitter.com/SaiyanBs), [@ironaddicteddog](https://twitter.com/ironaddicteddog)
 
+***[Updated at 2022.3.31]***
 
-- **See the example repo [here](https://github.com/DappioWonderland/swap-ui-example)**
-- **See the demo DApp [here](https://swap-ui-example.dappio.xyz)**
+> **See the example repo [here](https://github.com/DappioWonderland/swap-ui-example)**
+
+> **See the demo DApp [here](https://swap-ui-example.dappio.xyz)**
 
 ## TL; DR
 
@@ -2324,4 +2326,4 @@ $ yarn dev
 - https://github.com/thuglabs/create-dapp-solana-nextjs
 - https://www.udemy.com/course/typescript-the-complete-developers-guide
 
-###### tags: `solmeet`
+###### tags: `notes`
