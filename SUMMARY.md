@@ -2,8 +2,13 @@
 
 - [What is SolMeet?](README.md)
 
-## Content
+## Notes
 
-- [Notes](contents/notes/README.md)
-  - [SolMeet #3](contents/notes/solmeet-3.md)
-  - [SolMeet #4](contents/notes/solmeet-4.md)
+- [A Starter Kit for New Solana Developer](contents/notes/solana-starter-kit.md)
+- [Introduction to Anchor](contents/notes/intro-to-anchor.md)
+- [A Complete Guide to Mint Solana NFTs with Metaplex](contents/notes/complete-guide-to-mint-solana-nft.md)
+- [BUIDL a Swap UI on Solana](contents/notes/buidl-swap-ui.md)
+- [BUIDL an Auto-compounding Bot on Saber](contents/notes/buidl-auto-compounding-bot.md)
+- [A Starter Kit for Running Solana Validator](valdator-starter-kit.md)
+
+###### tags: `gitbook`
