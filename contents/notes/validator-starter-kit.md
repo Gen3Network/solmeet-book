@@ -1,6 +1,6 @@
 # A Starter Kit for Running Solana Validator
 
-**Authors:** @eefylin, [@emersonliuuu](https://twitter.com/emersonliuuu), [@ironaddicteddog](https://twitter.com/ironaddicteddog)
+**Authors:** [@eefylin](https://twitter.com/eefylin), [@emersonliuuu](https://twitter.com/emersonliuuu), [@ironaddicteddog](https://twitter.com/ironaddicteddog)
 
 ***[Updated at 2022.3.31]***
 
