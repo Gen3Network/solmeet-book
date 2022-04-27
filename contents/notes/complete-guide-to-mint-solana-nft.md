@@ -2,7 +2,9 @@
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog)
 
-***[Updated at 2022.3.31]***
+***[Updated at 2022.4.27]***
+
+> **See the example repo [here](https://github.com/DappioWonderland/nft-mint-example)**
 
 ## Overview
 
@@ -43,16 +45,22 @@
 │       ├── 📂 images
 |       |
 |       └── 📄 _metadata.csv
-│ 
-└── 📂 arweave-image-uploader
+│
+├── 📂 arweave-image-uploader
+│   │
+│   └── 📂 public
+│       |
+│       ├── 📂 images
+│       |
+│       ├── 📄 data.csv
+│       |
+│       └── 📄 arweave-uris.json
+│
+└── 📂 mint
     │
-    └── 📂 public
-        |
-        ├── 📂 images
-        |
-        ├── 📄 data.csv
-        |
-        └── 📄 arweave-uris.json
+    ├── 📄 mint.js
+    │
+    └── 📄 mints.json
 ```
 
 ### This Tutorial Only Works on x86_64 Chip
@@ -82,7 +90,7 @@ Folder link [here](https://drive.google.com/drive/folders/1tIXmkRq0cKLp6BZ_hP5_J
 
 Install `gdown`:
 
-```
+```bash
 $ sudo apt update
 $ sudo apt install python3-pip
 ...
@@ -94,7 +102,7 @@ $ pip install gdown
 
 Download `background`, `base`, `clothes`, `faces`, `hats` separately:
 
-```
+```bash
 $ mkdir solmeet-3-sandbox
 $ cd solmeet-3-sandbox
 $ gdown --folder https://drive.google.com/drive/folders/1RLz4J7TTh9cnXKWJlUb6_SC5dSnDYiBL -O background
@@ -126,7 +134,7 @@ $ scp -r [path of the local folder] user@host:[path to s]
 
 - https://github.com/HashLips/hashlips_art_engine
 
-```
+```bash
 $ git clone https://github.com/HashLips/hashlips_art_engine.git
 ...
 
@@ -142,7 +150,7 @@ $ yarn
 
 - https://github.com/thuglabs/arweave-image-uploader
 
-```
+```bash
 $ git clone https://github.com/thuglabs/arweave-image-uploader.git
 ...
 
@@ -156,11 +164,11 @@ $ yarn
 
 - https://github.com/samuelvanderwaal/metaboss
 
-```
+```bash
 $ sudo apt-get install pkg-config libssl-dev libudev-dev
 ...
 
-$ cargo install metaboss
+$ cargo install metaboss --locked
 ...
 
 ```
@@ -185,7 +193,9 @@ Follow this [doc](https://docs.arweave.org/info/wallets/arweave-web-extension-wa
 
 Additionally, we have to make a few small changes in the codebase to export the data with desired format.
 
-Add the following code snippets in `src/main.js`:
+Next, **replace the source code of `hashlips_art_engine/src/main.js` with the code from the [example](https://raw.githubusercontent.com/DappioWonderland/nft-mint-example/master/hashlips_art_engine/src/main.js)**.
+
+Here are the changes we made:
 
 ```javascript
 // In src/main.js
@@ -197,17 +207,17 @@ let traits = layerConfigurations[0].layersOrder.map(o => o.name);
 let metadataListCsv = [`Name,${traits.join(",")}`];
 ...
 
-// Line 170
+// Line 171
 metadataListCsv.push(`${tempMetadata.name.split('#')[1]},${attributesList.map(o => o.value).join(",")}`);
 ...
 
-// Line 305
+// Line 317
 const writeMetaDataCsv = (_data) => {
   fs.writeFileSync(`${buildDir}/_metadata.csv`, _data);
 };
 ...
 
-// Line 429
+// Line 441
 writeMetaDataCsv(metadataListCsv.join('\n'));
 ...
 
@@ -215,7 +225,9 @@ writeMetaDataCsv(metadataListCsv.join('\n'));
 
 ### Config `hashlips_art_engine`
 
-Update the following lines in `src/config.js`:
+**Replace the source code of `hashlips_art_engine/src/config.js` with the code from the [example](https://raw.githubusercontent.com/DappioWonderland/nft-mint-example/master/hashlips_art_engine/src/config.js)**.
+
+Here are the changes we made:
 
 ```javascript
 // In src/config.js
@@ -261,7 +273,7 @@ Set the rarity for each trait **by adding a weight number in filename**. In this
 
 After updating the filenames, you should have the following results:
 
-```
+```bash
 $ ls layers/background
 bg1#1.png  bg2#1.png  bg3#1.png  bg4#1.png  bg5#1.png
 
@@ -287,7 +299,7 @@ $ yarn run build
 This will export the images to `images` folder and a `_metadata.csv` file, both under `build` folder.
 
 > Note: You can compute the distribution of rarity by this command:
-> ```
+> ```bash
 > $ yarn run rarity
 > ```
 
@@ -303,42 +315,13 @@ Follow this [doc](https://docs.arweave.org/info/wallets/arweave-web-extension-wa
 
 Install `dotenv`:
 
-```
+```bash
 $ yarn add dotenv
 ```
 
-Add these code snippets in `uploader.js`:
-
-```javascript
-// In uploader.js
-
-...
-
-// Line 6
-import dotenv from "dotenv";
-dotenv.config();
-...
-
-// Line 95
-let metadataCollectionUri = [];
-...
-
-// Line 152
-metadataCollectionUri.push(metadataUrl);
-...
-
-// Line 169
-const uris = JSON.stringify(metadataCollectionUri);
-fs.writeFileSync("./public/arweave-uris.json", uris);
-...
-
-```
-
-### Config `arweave-image-uploader`
-
 Copy the whole string from the downloaded key file and paste to new `.env` file:
 
-```
+```bash
 $ touch .env
 ```
 
@@ -348,11 +331,18 @@ $ touch .env
 KEY={"kty":"RSA","n":"tS1op66z_hQcHj5rKo_WZPvQp3nUP-auQCHqMr..."}
 ```
 
-**Update the metadata in `uploader.js`**:
+**Replace the source code of `arweave-image-uploader/uploader.js` with the code from the [example](https://raw.githubusercontent.com/DappioWonderland/nft-mint-example/master/arweave-image-uploader/uploader.js)**.
+
+Here are the changes we made:
 
 ```javascript
 // In uploader.js
 
+...
+
+// Line 6
+import dotenv from "dotenv";
+dotenv.config();
 ...
 
 // Line 21
@@ -390,15 +380,63 @@ const getMetadata = (name, imageUrl, attributes) => ({
 });
 ...
 
-// Line 65
+// Line 93
 let key = JSON.parse(process.env.KEY);
+...
+
+// Line 123
+let metadataUri = [];
+let metadataCollectionUri = [];
+...
+
+// Line 181
+metadataUri.push(metadataUrl);
+...
+
+// Line 192
+
+// Collection
+const collectionFilePath = folder + "logo.png";
+const collectionLogo = fs.readFileSync(collectionFilePath);
+const contentType = ["Content-Type", "image/png"];
+const { id } = await runUpload(collectionLogo, contentType, true);
+const imageUrl = id ? `https://arweave.net/${id}` : undefined;
+const collectionName = "SolMeet NFT DAO";
+const collectionFamily = "DAO";
+const metadata = getCollectionMetadata(
+  collectionName,
+  collectionFamily,
+  imageUrl
+);
+const metaContentType = ["Content-Type", "application/json"];
+const metadataString = JSON.stringify(metadata);
+const { id: metadataId } = await runUpload(metadataString, metaContentType);
+const metadataUrl = id ? `https://arweave.net/${metadataId}` : undefined;
+
+console.log("metadataUrl", metadataUrl);
+const newItem = {
+  collection: {
+    name: collectionName,
+    uri: metadataUrl,
+  },
+};
+metadataCollectionUri.push(metadataUrl);
+
+metadataCollection = { ...metadataCollection, ...newItem };
+...
+
+// Line 227
+const uris = JSON.stringify(metadataUri);
+fs.writeFileSync("./public/arweave-uris.json", uris);
+const collectionUris = JSON.stringify(metadataCollectionUri);
+fs.writeFileSync("./public/arweave-collection-uris.json", collectionUris);
 ...
 
 ```
 
 **Notice: make sure that the address of `creators`** is the same as the mint transaction sender, which is the Solana cli wallet. You can double check via this command:
 
-```
+```bash
 $ solana address
 DaPYbGagq3dFDZ1i2PWpSP27mg1ty7J3XfQQciQPLsUn
 ```
@@ -416,7 +454,7 @@ $ cp ../hashlips_art_engine/build/_metadata.csv public/data.csv
 
 Upload to Arweave:
 
-```
+```bash
 $ yarn run upload
 ...
 
@@ -432,24 +470,19 @@ Also, you can access your image and metadata by visiting the uri. For example:
 
 ### Config Solana
 
-Here, we use `solana-mf` for deploying and testing.
+Here, we use `solana-mf` for deploying and testing:
 
-Config RPC in `config.yml`:
-
-```
-# In ~/.config/solana/cli/config.yml
-
+```bash
+$ solana config set --url https://rpc-mainnet-fork.dappio.xyz
 ...
 
-json_rpc_url: "https://rpc-mainnet-fork.dappio.xyz"
-websocket_url: "wss://rpc-mainnet-fork.dappio.xyz/ws"
+$ solana config set --ws wss://rpc-mainnet-fork.dappio.xyz/ws
 ...
-
 ```
 
 Don't forget to request for airdrop at the first place:
 
-```
+```bash
 $ solana airdrop 1
 ...
 
@@ -457,13 +490,40 @@ $ solana airdrop 1
 
 ### Mint
 
-We will use `metaboss` for minting in batch: 
+We will use `metaboss` for interacting with Metaplex. Here we have to do 3 things in order:
+- Create Collection
+- Mint NFTs
+- Set and verify the Collection for NFTs
 
-```
-$ metaboss mint list --keypair ~/.config/solana/id.json --external-metadata-uris public/arweave-uris.json --receiver BgdtDEEmn95wakgQRx4jAVqn8jsSPBhDwxE8NTPnmyon --immutable --primary-sale-happened
-...
+First, create a folder `mint` an empty file `mint.js`:
 
+```bash
+$ mkdir mint
+$ cd mint
+$ touch mint.js
 ```
+
+Next, **replace the source code of `mint/mint.js` with the code from the [example](https://raw.githubusercontent.com/DappioWonderland/nft-mint-example/master/mint/mint.js)**.
+
+Then, run the minting script:
+
+```bash
+$ KEYPAIR=~/.config/solana/id.json RECEIVER=MY_ADDRESS AUTHORITY=MY_ADDRESS node mint.js 
+
+collectionMint: 6NyVbJX1TB9HMYs5Wfx7qDuPcj8gX55DgsPh97Fv3M8T
+nftMint: 6ofefmhENgvXwPznjJikZiAsbEKbxZb689gtkRcR4gUu
+nftMint: HicQBruRwJHr7peuzAvZyhUrmwAAYXppjX1VQNVF15CC
+nftMint: 2h7rHru4WRzBJnw3M7dN8TSfoUZPnzqD1Beo53gm6pC9
+nftMint: 8vD2rNDNs6VZ7H4cRuRmi7uwZEff2MXxMA1Cbq9KdTm1
+nftMint: 747BYudqdx9zdvwhvwvn5j4MDekpsuv9dEL5zNewcfvt
+nftMint: C9pVfJRZR1NspdRAyPkow553aynNDpLnFYqBWZD5mWT9
+nftMint: EYKc62HiRwKADAYe5fSTXXFfU5B5XCLg8nSsJACMEcGj
+nftMint: 2U3pGSVSpVUYcaz3bu4ZMaDpHQjpXLVHnx6FbzzS5TJa
+nftMint: EvT3voPJNZTTBTYvQYFmgboj9JxEnJiQ5zxr45tX5MKY
+nftMint: 5H87TEVxeAK5kYiDP9UCzF3kCQ8L6rx263gqWBy4B1An
+```
+
+The results can be found in `mint/mints.json` as well.
 
 ### Display NFTs in Phantom
 
