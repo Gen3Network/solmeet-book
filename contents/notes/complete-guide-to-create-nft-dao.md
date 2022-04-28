@@ -1,6 +1,6 @@
 # A Complete Guide to Create a NFT DAO on Solana
 
-![](https://hackmd.io/_uploads/HyBSB9wH9.jpg)
+![](https://hackmd.io/_uploads/SycpRADrq.png)
 
 **Authors:** [@emersonliuuu](https://twitter.com/emersonliuuu), [@ironaddicteddog](https://twitter.com/ironaddicteddog)
 
@@ -281,20 +281,13 @@ Finally, click ***Register*** to use your holding NFTs.
 
 ## Part 3: Propose and Vote
 
-- Create treasury
-  - SOL
-  - Dappie Gang (NFT)
-- Send fund to treasury
-- Send asset to SOL treasury
-- Proposal: Send Asset to contributor
-
-> Be aware of the tx size limit. The proposal will fail if the proposer has more than **3** NFTs.
-
 In this section, we will go through the follwoing operations:
   - Create treasury for SOL and NFT
   - Send funds to treasury for SOL and NFT
   - Propose to transfer funds
   - Execute the proposal
+
+> Be aware of the tx size limit. The proposal will fail if the proposer has more than **3** NFTs.
 
 ### Create Treasury
 
