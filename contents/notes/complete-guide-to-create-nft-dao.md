@@ -243,7 +243,7 @@ Click ***Add proposal*** and then perform **Vote** and **Execute**:
 
 ![](https://hackmd.io/_uploads/SJM532wH9.png)
 
-### Configure NFT plugin collection
+#### Configure NFT plugin collection
 
 Next, let's create another proposal:
 
