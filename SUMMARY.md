@@ -1,3 +1,7 @@
+---
+tags: gitbook
+---
+
 # Table of contents
 
 - [About Us](README.md)
@@ -11,5 +15,4 @@
 - [BUIDL an Auto-compounding Bot on Saber](contents/notes/buidl-auto-compounding-bot.md)
 - [A Starter Kit for Running Solana Validator](contents/notes/validator-starter-kit.md)
 - [A Complete Guide to Create a NFT DAO on Solana](contents/notes/complete-guide-to-create-nft-dao.md)
-
-###### tags: `gitbook`
+- [Deep Dive into Anchor by Implementing Token Management Program](contents/notes/anchor-token-management.md)
