@@ -96,38 +96,24 @@ Token management consists of two modules:
 
 #### Locker
 
-- create_locker
-![](https://hackmd.io/_uploads/HJEZ3mcwq.png)
-- withdraw
-![](https://hackmd.io/_uploads/SJvnmXqPq.png)
-![](https://hackmd.io/_uploads/rJ67rXqwq.png)
+![](https://hackmd.io/_uploads/BJKSJr9D5.png)
+![](https://hackmd.io/_uploads/H1G9kS5Pc.png)
+![](https://hackmd.io/_uploads/rJuT1B9Pq.png)
 
 #### Pool
 
-- create_pool
-![](https://hackmd.io/_uploads/r1mFHXqw9.png)
-- create_staker
-![](https://hackmd.io/_uploads/rkzcrmqv9.png)
-- update_staker
-![](https://hackmd.io/_uploads/ryr3Smqw9.png)
-- deposit
-![](https://hackmd.io/_uploads/SkHTB7qPq.png)
-- withdraw
-![](https://hackmd.io/_uploads/H1iWLQ9vq.png)
-- stake
-![](https://hackmd.io/_uploads/rJYCBXqw9.png)
-- start_unstake
-![](https://hackmd.io/_uploads/ByuJUm9D5.png)
-- end_unstake
-![](https://hackmd.io/_uploads/H1BlImcw5.png)
-- drop_reward
-![](https://hackmd.io/_uploads/SkifUX5w5.png)
-- expire_reward
-![](https://hackmd.io/_uploads/SkMrLX5w5.png)
-- claim_reward
-![](https://hackmd.io/_uploads/SkOXL75Pc.png)
-- **claim_reward_to_locker**
-![](https://hackmd.io/_uploads/ry8VLXqwq.png)
+![](https://hackmd.io/_uploads/SkEexr9P5.png)
+![](https://hackmd.io/_uploads/HkA4grcP9.png)
+![](https://hackmd.io/_uploads/HyIveS5w9.png)
+![](https://hackmd.io/_uploads/By6clBqv5.png)
+![](https://hackmd.io/_uploads/BJUaxBqP5.png)
+![](https://hackmd.io/_uploads/SJ6l-HcP9.png)
+![](https://hackmd.io/_uploads/BJLQ-r9vc.png)
+![](https://hackmd.io/_uploads/H1UrWBcw5.png)
+![](https://hackmd.io/_uploads/SJbObB9Pq.png)
+![](https://hackmd.io/_uploads/SkB9WS9D9.png)
+![](https://hackmd.io/_uploads/r192Zrqv9.png)
+![](https://hackmd.io/_uploads/B1-yGScwq.png)
 
 ## Implementing Token Management Program in Anchor
 
