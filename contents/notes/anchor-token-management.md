@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # Deep Dive into Anchor by Implementing Token Management Program
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog), [@emersonliuuu](https://twitter.com/emersonliuuu)
@@ -34,9 +38,9 @@ You can watch [this awesome talk](https://youtu.be/cvW8EwGHw8U) given by Armani 
 ### Why Anchor?
 
 - **Anchor is the new standard**
-  - https://apr.dev
-  - https://anchor.so
-  - https://anchor.projectserum.com
+  - [apr.dev](https://apr.dev)
+  - [anchor.so](https://anchor.so)
+  - [anchor.projectserum.com](https://anchor.projectserum.com)
 - Productivity
     - Make Solana program more intuitive to understand
     - More clear buisness Logic
@@ -57,9 +61,14 @@ You can watch [this awesome talk](https://youtu.be/cvW8EwGHw8U) given by Armani 
 
 ## Overview of Token Management
 
-Token management consists of two modules:
+**Note: These programs are originated from Serum's [stake program](https://github.com/project-serum/stake) developed by Armani Ferrante.** There are a few things evolved from the original version:
+- Upgrade Anchor to latest version (Currently `0.24.2`)
+- Optimize some function invocation to avoid stack frame limit
+- Rename strcut and module to make them better reveal its designed purpose
+
+In short, token management consist of two modules:
 - **Locker Manager, which manages the vesting of locked tokens**
-- **Pool Mananger, which manages the mining of rewarded tokens**
+- **Pool Manager, which manages the mining of rewarded tokens**
 
 ### Vesting and Mining
 
@@ -77,57 +86,58 @@ Token management consists of two modules:
 
 ![](https://hackmd.io/_uploads/HJP76GYwc.png)
 
-- locker manager
-    - locker
-    - locker_vault_authority
-    - pool_reward_keeper
-- pool manager
-    - pool
-      - vault
-      - vault_stake
-      - vault_pw
-      - spt
-    - rewarder
-    - pending_withdrawl
-    - reward_queue
-    - pool_vault_authority
-
 ### Interfaces
 
-#### Locker
+| Locker |
+| :-: |
+| ![](https://hackmd.io/_uploads/BJKSJr9D5.png) |
+| ![](https://hackmd.io/_uploads/H1G9kS5Pc.png) |
 
-![](https://hackmd.io/_uploads/BJKSJr9D5.png)
-![](https://hackmd.io/_uploads/H1G9kS5Pc.png)
-![](https://hackmd.io/_uploads/rJuT1B9Pq.png)
+<!-- - linear unlock
+  - ![](https://hackmd.io/_uploads/rJuT1B9Pq.png)
+ -->
 
 #### Pool
 
-![](https://hackmd.io/_uploads/SkEexr9P5.png)
-![](https://hackmd.io/_uploads/HkA4grcP9.png)
-![](https://hackmd.io/_uploads/HyIveS5w9.png)
-![](https://hackmd.io/_uploads/By6clBqv5.png)
-![](https://hackmd.io/_uploads/BJUaxBqP5.png)
-![](https://hackmd.io/_uploads/SJ6l-HcP9.png)
-![](https://hackmd.io/_uploads/BJLQ-r9vc.png)
-![](https://hackmd.io/_uploads/H1UrWBcw5.png)
-![](https://hackmd.io/_uploads/SJbObB9Pq.png)
-![](https://hackmd.io/_uploads/SkB9WS9D9.png)
-![](https://hackmd.io/_uploads/r192Zrqv9.png)
-![](https://hackmd.io/_uploads/B1-yGScwq.png)
+| Pool (Rewarder) |
+| :-: |
+| ![](https://hackmd.io/_uploads/SkEexr9P5.png) |
+| ![](https://hackmd.io/_uploads/SJbObB9Pq.png) |
+| ![](https://hackmd.io/_uploads/SkB9WS9D9.png) |
+| ![](https://hackmd.io/_uploads/r192Zrqv9.png) |
+| ![](https://hackmd.io/_uploads/B1-yGScwq.png) |
+
+
+| Pool (Staker) |
+| :-: |
+| ![](https://hackmd.io/_uploads/HkA4grcP9.png) |
+| ![](https://hackmd.io/_uploads/HyIveS5w9.png) |
+| ![](https://hackmd.io/_uploads/By6clBqv5.png) |
+| ![](https://hackmd.io/_uploads/BJUaxBqP5.png) |
+| ![](https://hackmd.io/_uploads/SJ6l-HcP9.png) |
+| ![](https://hackmd.io/_uploads/BJLQ-r9vc.png) |
+| ![](https://hackmd.io/_uploads/H1UrWBcw5.png) |
 
 ## Implementing Token Management Program in Anchor
 
 ### Prerequisites
 
-- Basic layouts
+- Basic layouts of Anchor programs
+  - program
+  - context
+  - state
+  - error
+  - ...
 - Anchor Constraints
+  - `[account(mut)]`
+  - `[account(init)]`
+  - ...
 - Token Program
   - Token Account
   - Mint
   - Transfer
   - Burn
-- `anchor-escrow`
-  - https://book.solmeet.dev/notes/intro-to-anchor
+- [`anchor-escrow`](https://book.solmeet.dev/notes/intro-to-anchor)
 
 ### To Be Covered
 
@@ -144,7 +154,7 @@ Token management consists of two modules:
 - ~~Avoid stack frame limit~~
 - ~~account size limit (max len of an array)~~ -->
 
-### Setup
+<!-- ### Setup
 
 ```bash
 $ anchor init anchor-token-management
@@ -161,44 +171,47 @@ $ anchor new pool-reward-locker
 ```bash
 $ rm -rf programs/anchor-token-management
 ```
+ -->
 
 ### Step 1: Scaffolding
 
-- https://github.com/ironaddicteddog/anchor-token-management/tree/step-1
-- Scaffolding by following the interfaces explained above
+- Checkout to [`step-1`](https://github.com/ironaddicteddog/anchor-token-management/tree/step-1) branch to see the full code
+- In this step, we scaffold the programs by following the interfaces explained above:
   - Implement `LockerManager`
   - Implement `PoolManager`
   - Implement `PoolRewardKeeper`
 
 ### Part 2: Implementing
 
-- https://github.com/ironaddicteddog/anchor-token-management/tree/step-2
-- Add all contexts and states
-- Add utils
-  - `calculator`
-  - `RewardQueue`
-- Add [constraints](https://docs.rs/anchor-lang/0.24.2/anchor_lang/derive.Accounts.html)
-  - PDA creation and derivation
-  - `has_one`
-  - Raw constraints
-  - ...
+- Checkout to [`step-2`](https://github.com/ironaddicteddog/anchor-token-management/tree/step-2) branch to see the full code
+- In this step, we implement all the functions, context and states without concerning the security issues:
+  - Add all contexts and states
+  - Add utils
+    - `calculator`
+    - `RewardQueue`
+  - Add [constraints](https://docs.rs/anchor-lang/0.24.2/anchor_lang/derive.Accounts.html)
+    - PDA creation and derivation
+    - `has_one`
+    - Raw constraints
+    - ...
 
 > Tips: you can use `git diff` to see what changes have been made:
-> ```
-> $ git clone git@github.com:ironaddicteddog/anchor-token-management.git
+>
+> ```bash
 > $ git checkout step-2
 > $ git diff step-1
 > ```
 
 ### Part 3: Improving Security
 
-- https://github.com/ironaddicteddog/anchor-token-management/tree/step-3
-- Customize error
-- Implement access control and security check
+- Checkout to [`step-3`](https://github.com/ironaddicteddog/anchor-token-management/tree/step-3) branch to see the full code
+- In this step, we improve the security:
+  - Implement access control and security check
+  - Customize error
 
 > Tips: you can use `git diff` to see what changes have been made:
+> 
 > ```
-> $ git clone git@github.com:ironaddicteddog/anchor-token-management.git
 > $ git checkout step-3
 > $ git diff step-2
 > ```
@@ -217,13 +230,3 @@ Control funds even if its locked in locker. For example: desposit to pool from l
 - https://book.solmeet.dev/notes/intro-to-anchor
 - https://github.com/project-serum/stake/blob/master/docs/staking.md
 - https://docs.rs/anchor-lang/0.24.2/anchor_lang/derive.Accounts.html
-
-### Vesting Program
-
-- https://github.com/Bonfida/token-vesting
-
-### Mining Program
-
-- https://github.com/QuarryProtocol
-
-###### tags: `notes`
