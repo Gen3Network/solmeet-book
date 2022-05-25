@@ -64,7 +64,7 @@ You can watch [this awesome talk](https://youtu.be/cvW8EwGHw8U) given by Armani 
 **Note: These programs are originated from Serum's [stake program](https://github.com/project-serum/stake) developed by Armani Ferrante.** There are a few things evolved from the original version:
 - Upgrade Anchor to latest version (Currently `0.24.2`)
 - Optimize some function invocation to avoid stack frame limit
-- Rename strcut and module to make them better reveal its designed purpose
+- Rename struct and module to make them better reveal its designed purpose
 
 In short, token management consist of two modules:
 - **Locker Manager, which manages the vesting of locked tokens**
@@ -97,8 +97,6 @@ In short, token management consist of two modules:
   - ![](https://hackmd.io/_uploads/rJuT1B9Pq.png)
  -->
 
-#### Pool
-
 | Pool (Rewarder) |
 | :-: |
 | ![](https://hackmd.io/_uploads/SkEexr9P5.png) |
@@ -106,7 +104,6 @@ In short, token management consist of two modules:
 | ![](https://hackmd.io/_uploads/SkB9WS9D9.png) |
 | ![](https://hackmd.io/_uploads/r192Zrqv9.png) |
 | ![](https://hackmd.io/_uploads/B1-yGScwq.png) |
-
 
 | Pool (Staker) |
 | :-: |
