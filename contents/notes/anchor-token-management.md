@@ -87,16 +87,23 @@ In short, token management consist of two modules:
 ![](https://hackmd.io/_uploads/HJP76GYwc.png)
 
 ### Interfaces
-
+<!-- 
 | Locker |
 | :-: |
 | ![](https://hackmd.io/_uploads/BJKSJr9D5.png) |
 | ![](https://hackmd.io/_uploads/H1G9kS5Pc.png) |
+ -->
+#### Locker
+##### Create Locker
+![](https://hackmd.io/_uploads/SJCFdv2wq.png)
+
+##### Withdraw
+![](https://hackmd.io/_uploads/HJW1KP2v5.png)
 
 <!-- - linear unlock
   - ![](https://hackmd.io/_uploads/rJuT1B9Pq.png)
  -->
-
+<!--
 | Pool (Rewarder) |
 | :-: |
 | ![](https://hackmd.io/_uploads/SkEexr9P5.png) |
@@ -104,7 +111,21 @@ In short, token management consist of two modules:
 | ![](https://hackmd.io/_uploads/SkB9WS9D9.png) |
 | ![](https://hackmd.io/_uploads/r192Zrqv9.png) |
 | ![](https://hackmd.io/_uploads/B1-yGScwq.png) |
+ -->
+---
 
+#### Pool (Rewarder)
+##### Create Pool
+![](https://hackmd.io/_uploads/SyLE5whv9.png)
+
+##### Drop Reward
+![](https://hackmd.io/_uploads/rkYMnwnvc.png)
+
+##### Expired Reward
+![](https://hackmd.io/_uploads/r1r53wnD9.png)
+
+
+<!--
 | Pool (Staker) |
 | :-: |
 | ![](https://hackmd.io/_uploads/HkA4grcP9.png) |
@@ -114,6 +135,36 @@ In short, token management consist of two modules:
 | ![](https://hackmd.io/_uploads/SJ6l-HcP9.png) |
 | ![](https://hackmd.io/_uploads/BJLQ-r9vc.png) |
 | ![](https://hackmd.io/_uploads/H1UrWBcw5.png) |
+ -->
+---
+
+#### Pool (Staker)
+##### Create Staker
+![](https://hackmd.io/_uploads/S1su5D2Dc.png)
+
+##### Update Staker Vault
+![](https://hackmd.io/_uploads/BJM2cv2wc.png)
+
+##### Deposit
+![](https://hackmd.io/_uploads/HyFA5Pnv5.png)
+
+##### Withdraw
+![](https://hackmd.io/_uploads/r1gbk2vhPq.png)
+
+##### Stake
+![](https://hackmd.io/_uploads/r1qZoDnwc.png)
+
+##### Start Unstake
+![](https://hackmd.io/_uploads/SkYuoDnDc.png)
+
+##### End Unstake
+![](https://hackmd.io/_uploads/ryb3jD2wc.png)
+
+##### Claim Reward
+![](https://hackmd.io/_uploads/Hklrhwhvc.png)
+
+##### Claim Reward to Locker
+![](https://hackmd.io/_uploads/H1kO3DhDq.png)
 
 ## Implementing Token Management Program in Anchor
 
