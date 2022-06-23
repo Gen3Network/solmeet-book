@@ -388,18 +388,18 @@ Restart local validator, and clone a useful program for creating ATA from Mainne
 $ solana-test-validator -r -c 9tiP8yZcekzfGzSBmp7n9LaDHRjxP2w7wJj8tpPJtfG -u https://api.mainnet-beta.solana.com
 ```
 
-Configure RPC url to localnet and the wallet to the one for deploying. Make sure the wallet have enough balance (~ 5 SOL)
+Configure RPC url to localnet and the wallet to the one for deploying. Make sure the wallet have enough balance (~ 10 SOL)
 ```
 $ solana config get
 
 # config solana setting to target wallet and network
-$ solana config set -k ~/.config/solana/id.json -u <Localnet URL>
+$ solana config set -k ~/.config/solana/id.json -u localhost
 
 # check balance
 $ solana balance
 
 # request airdrop
-$ solana airdrop 5
+$ solana airdrop 10
 ```
 
 
@@ -413,8 +413,9 @@ $ git clone https://github.com/Dappio-emerson/solmeet-9-nft-staking.git
 Install dependency and make sure you have replace program keys for all files below.
 1. `programs/nft-rarity/src/lib.rs`
 2. `programs/nft-staking/src/lib.rs`
-3. `ts-v1/ids.ts`
-4. `Anchor.toml`
+3. `ts/v1/ids.ts`
+4. `ts/v2/ids.ts`
+5. `Anchor.toml`
 ```
 #cd solmeet-9-nft-staking
 $ yarn
