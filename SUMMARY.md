@@ -4,7 +4,7 @@ tags: gitbook
 
 # Table of contents
 
-- [About Us](README.md)
+- [About SolMeet](README.md)
 
 ## Notes
 
