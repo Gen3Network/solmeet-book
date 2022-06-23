@@ -90,7 +90,9 @@ And how we design the components **depends on**
 Sometimes these points can against each other, so I feel like designing the components and data flow is more like an art, **may need to sacrifice some points to achieve another one**, so just choose a better way at the moment you did this.
 
 #### For Instance, NFT staking page in [Dappio](https://app.dappio.xyz/nft-staking)
+
 ![](https://hackmd.io/_uploads/rks9rwOK5.png)
+
 ![](https://i.imgur.com/0iMhvPQ.jpg)
 
 #### Discuss
@@ -107,6 +109,7 @@ Sometimes these points can against each other, so I feel like designing the comp
 3. What do we need to consider?
 
 ### Let's check the first part - Overview info
+
 ![](https://hackmd.io/_uploads/HkG_SEx5c.png)
 
 ```typescript=
@@ -152,6 +155,7 @@ const getAllStakedData = async () => {
 ### Pending Reward
 
 Then, it's the pending reward part which also exists in DappieGang's second row.
+
 ![](https://hackmd.io/_uploads/rk7EuNx99.png)
 
 First thing we need to know is where's the reward from? The only reason we can get the `NFTU` is because we deposit our prove token into farm and farming/mining, so we need to know the farm's account to get the infos we need.
@@ -214,6 +218,7 @@ export async function getUnclaimedReward(
 
 As we can see, just only the pending rewards could make tons of RPC requests.
 And here we only go through the funtional parts, as a frontend developer, you need to deal with the component design to make it maintainable, readable, and make sure the performance won't destroy the user experience at the same time.
+
 ![](https://hackmd.io/_uploads/S1eXc-y59.png)
 
 ```typescript=
@@ -313,7 +318,8 @@ New block contained state changes will be sync across validators and voted.
 
 #### Storing data in Solana
 
-[![](https://hackmd.io/_uploads/HkuU8iQx9.png)](https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction)
+![](https://hackmd.io/_uploads/HkuU8iQx9.png)
+
 > Image from https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction/
 
 ### Rule of Thumb
@@ -1142,11 +1148,15 @@ $ anchor run testV2
 ### Difference Between v1 and v2 SDK
 
 - **How we get account data**
-In v1 we fetch one account since we only get one pool info key at a time, but in v2 we done the fetching part at the beginning, and fetch all account with same structure in one RPC request.
+    
+    In v1 we fetch one account since we only get one pool info key at a time, but in v2 we done the fetching part at the beginning, and fetch all account with same structure in one RPC request.
+
 - **Where we get account data**
-In v1 we hard coded the account address in SDK instead of storing data in client side by fetching all account we need at a time. In v2 we implement with the opposite way, which reduce the frequency of fetching same account in different function.
+
+    In v1 we hard coded the account address in SDK instead of storing data in client side by fetching all account we need at a time. In v2 we implement with the opposite way, which reduce the frequency of fetching same account in different function.
 - **Maintainability**
-In v1 we'll need to update the hard coded stuff if new partner joined or we add new category which is tough to maintain. In v2, by replacing hard coded stuff with storing class in client side, there's no need to modify SDK due to new pool been created.
+
+    In v1 we'll need to update the hard coded stuff if new partner joined or we add new category which is tough to maintain. In v2, by replacing hard coded stuff with storing class in client side, there's no need to modify SDK due to new pool been created.
 
 ## Reference
 
