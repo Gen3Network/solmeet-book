@@ -2,10 +2,9 @@
 tags: notes
 ---
 
-# Walk through Solana SDK design
+# Walk Through Solana SDK Design
 
 **Author:** [@SaiyanBs](https://twitter.com/SaiyanBs), [@wei_sol_](https://twitter.com/wei_sol_), [@emersonliuuu](https://twitter.com/emersonliuuu)
-
 
 ***[Updated at 2022.06.22]***
 
@@ -19,10 +18,6 @@ tags: notes
 3. Compare between Bad & Good design
 
 ## Overview
-
-<!-- ### (Front-end Implement @Benson )
-
-### Frontend -->
 
 > Get data and show it on the client side.
 
@@ -155,6 +150,7 @@ const getAllStakedData = async () => {
 ```
 
 ### Pending Reward
+
 Then, it's the pending reward part which also exists in DappieGang's second row.
 ![](https://hackmd.io/_uploads/rk7EuNx99.png)
 
@@ -268,7 +264,7 @@ export async function stakeTxn(
 }
 ```
 
-### Problems
+## Problems
 
 1. **Hard code ID in SDK**
 
@@ -297,9 +293,14 @@ For example, the hardcoded pool and farm infos, which side to store all of these
 - Stateless, less parameters or arguments.
 - Call anywhere we want, no need to consider the context.
 
-## SDK Design
+## Good SDK Design
 
-### Solana system model
+### Prerequisites
+
+- Solana system model
+- Account model
+
+#### Solana system model
 
 ![](https://hackmd.io/_uploads/HJ7vkYHl5.png)
 
@@ -310,15 +311,12 @@ Writing data(sending transaction) to Solana is also first sent to RPC, the RPC w
 Each instructions will be executed in the program, modifying account data. 
 New block contained state changes will be sync across validators and voted.
 
-
-
-
-### Storing data in Solana
+#### Storing data in Solana
 
 [![](https://hackmd.io/_uploads/HkuU8iQx9.png)](https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction)
 > Image from https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction/
 
-### Good SDK Design: Rule of Thumbs
+### Rule of Thumb
 
 #### 1. SDK Architecture
 
@@ -326,9 +324,8 @@ New block contained state changes will be sync across validators and voted.
 
 This is an overview of a good SDK design. It can be separated into two part, read and write.
 
-The "read" part of the SDK is about fetching the data from RPC and deserialized into an object.
-
-The "write" part of the SDK is to create a transaction object to interact with programs.
+- The "read" part of the SDK is about fetching the data from RPC and deserialized into an object.
+- The "write" part of the SDK is to create a transaction object to interact with programs.
 
 Utility, layouts and ids is used across reading and writing.
 
@@ -817,11 +814,13 @@ $ anchor run testV1
 ```
 
 ### SDK v2
+
 You might notice there are some problems while we implementing stake/unstake.
 1. We need to know corresponding pool info key before we use it, and there are two way to get the key. One is generate with the seed as we done previous, and another is hard coded in SDK. Someone who used this SDK won't know the seed, so pool info key might need to hard coded in SDK and this result in frequently update SDK due to new partner joined.
 2. Since we only have pool info key, we must fetch account info when building transaction. You can imagine if user is going to stake lots of NFT in different pool that might be a disaster for just building transaction by sending tons of RPC request.
 
 #### Refactor SDK
+
 In order to solve the issues above, we will try to
 - Make stake/unstake transaction/instruction stateless
 - Remove hard coded stuff
@@ -914,7 +913,6 @@ export async function fetchAll(
 After implementing `fetchAll()` with some class to store the data, now we only fetch data at the beginning by calling `fetchAll()`, then we can pass the data as an argument for building transaction.
 
 ![](https://hackmd.io/_uploads/BJrERYe5q.png)
-
 
 #### Implement test with v2 (refactored) SDK
 
@@ -1068,8 +1066,8 @@ Run command below to make sure no issue occured.
 $ anchor run testV2
 ```
 
-
 #### Implement stake/unstake transaction in SDK v2
+
 Once all test passed, let's add the logic for stake and unstake transaction in `ts/v2/transaction.ts`. Since we pass in full pool info data instead of only the key, we can remove all RPC request during transaction building.
 
 **Stake**
@@ -1142,6 +1140,7 @@ $ anchor run testV2
 ```
 
 ### Difference Between v1 and v2 SDK
+
 - **How we get account data**
 In v1 we fetch one account since we only get one pool info key at a time, but in v2 we done the fetching part at the beginning, and fetch all account with same structure in one RPC request.
 - **Where we get account data**
@@ -1150,6 +1149,7 @@ In v1 we hard coded the account address in SDK instead of storing data in client
 In v1 we'll need to update the hard coded stuff if new partner joined or we add new category which is tough to maintain. In v2, by replacing hard coded stuff with storing class in client side, there's no need to modify SDK due to new pool been created.
 
 ## Reference
+
 - [book.solmeet.dev](https://book.solmeet.dev/)
 - [BUIDL an Auto-compounding Bot on Saber](https://book.solmeet.dev/notes/buidl-auto-compounding-bot)
 - [Dappio: NFT staking](https://app.dappio.xyz/nft-staking)
