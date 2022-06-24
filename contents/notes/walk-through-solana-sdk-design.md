@@ -430,7 +430,8 @@ $ anchor build
 $ anchor deploy
 ```
 
-**NOTICE:**
+**NOTICE**
+
 Make sure the **`Program Id`** you get after deployed match with the one in program **`declare_id!("6Utx...QnKM")`**, otherwise transaction we send might failed.
 
 ### SDK v1
@@ -440,6 +441,14 @@ Before we start staking NFT to program will need to initialize the allowed mint 
 ```
 # run user defined scripts to initialize 
 $ anchor run initializeState
+```
+
+**DEBUG**
+
+If you have some error message like something below, run `yarn add ts-mocha` might solve. Thanks to [this post](https://stackoverflow.com/questions/71119753/solana-test-program-anchor-test-failing-tsconfig-json-needs-an-import-asserti).
+```
+TypeError: Module "YOUR_FILE_PATH/solmeet-9-nft-staking/tsconfig.json" needs an import assertion of type "json" 
+  at new NodeError ...
 ```
 
 #### Import library and declare variables
