@@ -263,7 +263,7 @@ resources: https://www.genopets.me/
 
 ### 1. Initialize
 
-![](https://hackmd.io/_uploads/BkO1g5Hhc.png)
+![](https://hackmd.io/_uploads/ry604xgpq.png)
 
 - Store metaplex NFT attributes on chain
 - Breeding Metadata
@@ -282,21 +282,16 @@ resources: https://www.genopets.me/
 
 ### 2. Compute New Data
 
-![](https://hackmd.io/_uploads/Hyz-xqB39.png)
+![](https://hackmd.io/_uploads/S1k-rex6q.png)
 
-- The data is passed as arguments and verified by hash
-  - Or read account? **Reading the account initialized in last step is safer**
-- Fetch metaplex metadata
-  - Hash needs to be stored in metadata. Ex: Symbol field
 - Customizable Breeding Logic with `compute` interface
 - **Write attributes to `BreedingMeta` (PDA)**
 
 ### 3. Mint Child NFT
 
-![](https://hackmd.io/_uploads/HJt7gqSh9.png)
+![](https://hackmd.io/_uploads/SJA7rlgpc.png)
 
-- Write Metaplex metadata (without URI)
-  - **Store hash in `name` field of Metaplex metadata**
+- **Write Metaplex metadata (without URI)**
 - Transfer upgrade authority to Breeding program PDA Signer
 - Burn Parent NFTs(optional)
 - Read attributes (off-chain)
@@ -304,16 +299,14 @@ resources: https://www.genopets.me/
 
 ### 4. Update URI of child NFT
 
-![](https://hackmd.io/_uploads/HJ-re9r2c.png)
+![](https://hackmd.io/_uploads/B1ONSgl6q.png)
 
-- Call `update_uri` function
-  - Update URI in both Meteplex and Breeding
+- Update URI in Metaplex metadata
 
 <!-- ### Design Spec
 
 See [NFT Breeding Spec](/5wGPnBffTCyYu1PZCs6KoA) for more details
  -->
-
 
 ## Reference
 
