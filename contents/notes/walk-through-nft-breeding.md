@@ -43,11 +43,11 @@ note: A,B,C are NFT; $FT is FT.
 
 (2) **A+B->A+B+C [Most common]**
 
-(3) A+$FT->C  [tokenomics extension] 
+(3) A+$FT->C  [tokenomics extension]
 
-(3) A+$FT->A+C 
+(4) A+$FT->A+C 
 
-(4) A+B+$FT->A+B+C 
+(5) A+B+$FT->A+B+C 
 
 ### What is Breeding NFTs? 
 
