@@ -17,3 +17,4 @@ tags: gitbook
 - [#7 - A Complete Guide to Create a NFT DAO on Solana](contents/notes/complete-guide-to-create-nft-dao.md)
 - [#8 - Deep Dive into Anchor by Implementing Token Management Program](contents/notes/anchor-token-management.md)
 - [#9 - Walk Through Solana SDK Design](contents/notes/walk-through-solana-sdk-design.md)
+- [#10 - Walk Through NFT Breeding Tokenomic and Program Design](contents/notes/walk-through-nft-breeding.md)
