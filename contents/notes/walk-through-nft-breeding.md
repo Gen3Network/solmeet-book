@@ -245,8 +245,14 @@ Here are some **video demo ([1](https://drive.google.com/drive/folders/1YtFbJBOD
 
 ### Tokenomics (Extension)
 
-![](https://hackmd.io/_uploads/r1qlh61T5.png)
+#### Star Atlas
+![](https://hackmd.io/_uploads/SkeAdYBp9.png)
+![](https://hackmd.io/_uploads/HywR_tBpc.png)
+
+
 resources: https://staratlas.com/
+
+#### Genopets
 
 ![](https://hackmd.io/_uploads/Hybwpakp5.png)
 
