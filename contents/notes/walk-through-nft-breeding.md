@@ -319,4 +319,4 @@ See [NFT Breeding Spec](/5wGPnBffTCyYu1PZCs6KoA) for more details
 - https://hackernoon.com/an-intro-to-breedable-nfts-and-social-connections-in-the-metaverse
 - https://www.esports.net/crypto/breeding-games/
 - https://hackernoon.com/breeding-nfts-like-pokemons-your-tokens-can-evolve
-- [Tokenomics](/RU0jd4itRPeHm8i3MZtElg)
+- [Tokenomics](https://hackmd.io/@Piercetw/HyhNcK1pq)
