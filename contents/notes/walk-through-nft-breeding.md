@@ -246,15 +246,15 @@ Here are some **video demo ([1](https://drive.google.com/drive/folders/1YtFbJBOD
 ### Tokenomics (Extension)
 
 #### Star Atlas
-![](https://hackmd.io/_uploads/SkeAdYBp9.png =800x)
-![](https://hackmd.io/_uploads/HywR_tBpc.png =800x)
+![](https://hackmd.io/_uploads/SkeAdYBp9.png)
+![](https://hackmd.io/_uploads/HywR_tBpc.png)
 
 
 resources: https://staratlas.com/
 
 #### Genopets
 
-![](https://hackmd.io/_uploads/Hybwpakp5.png =800x)
+![](https://hackmd.io/_uploads/Hybwpakp5.png)
 
 resources: https://www.genopets.me/ 
 
@@ -262,7 +262,7 @@ resources: https://www.genopets.me/
 
 > #### Prerequisite: What is Metaplex Standard?
 > >
-> ![](https://i.imgur.com/yeO8vDC.png =800x)
+> ![](https://i.imgur.com/yeO8vDC.png)
 > image from [Metaplex docs](https://docs.metaplex.com/programs/token-metadata/accounts)
 
 ![](https://hackmd.io/_uploads/H1djPylTq.png)
