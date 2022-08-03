@@ -77,7 +77,7 @@ Photo Resource: https://www.youtube.com/watch?v=WbKVrhXfHaY
 
 ### Stories of Axie infinity: (Inspired by cryptoKitties)
 
-see [Storis on Crypto kitty and Axie infinity feat. Animoca Brands](/HUWszmY-TeWb-MrqB637fg) for references
+see [Storis on Crypto kitty and Axie infinity feat. Animoca Brands](https://hackmd.io/@Piercetw/Byv9l5kp9) for references
 
 ![](https://hackmd.io/_uploads/rk5JB6J65.png)
 ![](https://hackmd.io/_uploads/SkakS6yT5.jpg)
@@ -260,9 +260,10 @@ resources: https://www.genopets.me/
 
 ## Overview of NFT-Breeding Program
 
-> #### Prerequisite: What is Metaplex Standard?
-> >
-> ![](https://i.imgur.com/yeO8vDC.png)
+#### Prerequisite: What is Metaplex Standard?
+
+![](https://i.imgur.com/yeO8vDC.png)
+
 > image from [Metaplex docs](https://docs.metaplex.com/programs/token-metadata/accounts)
 
 ![](https://hackmd.io/_uploads/H1djPylTq.png)
