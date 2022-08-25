@@ -79,8 +79,8 @@ From Wikipedia:
 
 - High gas fees
 - Speed
-- Lack of limit orders (slippage on large orders)
-- Overlapping liquidity
+- High slippage on large orders
+- Fragmented liquidity
 
 ### Solution
 
@@ -98,8 +98,8 @@ From Raydium lightpaper:
 
 ## Components of Serum
 
-- [Instruction Set (Program)](https://github.com/project-serum/serum-ts/blob/master/packages/serum/src/instructions.js)
-- [Instruction Set (Client)](https://github.com/project-serum/serum-dex/blob/master/dex/src/instruction.rs#L327)
+- [Instruction Set (Program)](https://github.com/project-serum/serum-dex/blob/master/dex/src/instruction.rs#L327)
+- [Instruction Set (Client)](https://github.com/project-serum/serum-ts/blob/master/packages/serum/src/instructions.js#L161)
 - [Processor](https://github.com/project-serum/serum-dex/blob/master/dex/src/matching.rs)
 - Main actions
   - PlaceOrder
