@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # Let’s BUIDL a Swap UI on Solana in 2 Hours
 
 **Authors:** [@SaiyanBs](https://twitter.com/SaiyanBs), [@ironaddicteddog](https://twitter.com/ironaddicteddog)
@@ -2325,5 +2329,3 @@ $ yarn dev
 - https://github.com/yihau/solana-web3-demo
 - https://github.com/thuglabs/create-dapp-solana-nextjs
 - https://www.udemy.com/course/typescript-the-complete-developers-guide
-
-###### tags: `notes`
