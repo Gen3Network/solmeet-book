@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # A Complete Guide to Mint Solana NFTs with Metaplex
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog)
@@ -569,5 +573,3 @@ That's it!
 
 - https://pencilflip.medium.com/how-to-use-arweave-to-store-and-access-nft-metadata-823552293f62
 - https://pencilflip.medium.com/how-to-use-arweave-to-store-and-access-nft-metadata-part-2-21cb87f4091e
-
-###### tags: `notes`
