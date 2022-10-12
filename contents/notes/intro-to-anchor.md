@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # Anchor: A Powerful Framework for Solana Developers
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog)
@@ -1338,5 +1342,3 @@ And that's it!
 - https://docs.rs/anchor-lang/0.18.2/anchor_lang/derive.Accounts.html
 - https://anchor.projectserum.com/
 - https://blog.soteria.dev/?p=ef42d944f086
-
-###### tags: `notes`
