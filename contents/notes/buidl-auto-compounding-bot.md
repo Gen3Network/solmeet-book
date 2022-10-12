@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # Learn Solana Basics by Building an Auto-compounding Bot on Saber
 
 **Authors:** [@wei_sol_](https://twitter.com/wei_sol_), [@ironaddicteddog](https://twitter.com/ironaddicteddog)
@@ -707,5 +711,3 @@ Depositing all LP to farming...
 - https://github.com/DappioWonderland/auto-compounding-bot
 - https://hackmd.io/@ironaddicteddog/solana-starter-kit
 - https://hackmd.io/@ironaddicteddog/solana-anchor-escrow
-
-###### tags: `notes`
