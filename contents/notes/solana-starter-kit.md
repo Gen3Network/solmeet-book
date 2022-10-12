@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # A Starter Kit for New Solana Developer
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog)
@@ -1242,5 +1246,3 @@ $ ts-node ts/bob.ts
 - https://twitter.com/armaniferrante
 - https://twitter.com/therealchaseeb
 - https://twitter.com/jstrry
-
-###### tags: `notes`
