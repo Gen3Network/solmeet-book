@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # A Starter Kit for Running Solana Validator
 
 **Authors:** [@eefylin](https://twitter.com/eefylin), [@emersonliuuu](https://twitter.com/emersonliuuu), [@ironaddicteddog](https://twitter.com/ironaddicteddog)
@@ -356,5 +360,3 @@ Incentivize new validators to join to secure Solana network
 - https://docs.solana.com/running-validator/validator-start
 - https://hackmd.io/@ironaddicteddog/solana-starter-kit
 - https://github.com/DappioWonderland/solana
-
-###### tags: `notes`
