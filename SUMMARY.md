@@ -19,3 +19,4 @@ tags: gitbook
 - [#9 - Walk Through Solana SDK Design](contents/notes/walk-through-solana-sdk-design.md)
 - [#10 - Walk Through NFT Breeding Tokenomic and Program Design](contents/notes/walk-through-nft-breeding.md)
 - [#11 - BUIDL an Orderbook-based DEX on Solana in 2 hours](contents/notes/buidl-orderbook-based-dex.md)
+- [#12 - A Complete Guide to Build a Simple Aggregator with Universal Rabbit Hole](contents/notes/complete-guide-to-buidl-with-urh.md)
