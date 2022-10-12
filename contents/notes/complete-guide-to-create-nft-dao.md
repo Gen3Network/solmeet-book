@@ -1,3 +1,7 @@
+---
+tags: notes
+---
+
 # A Complete Guide to Create a NFT DAO on Solana
 
 ![](https://hackmd.io/_uploads/SycpRADrq.png)
@@ -365,5 +369,3 @@ Whoa! The NFT transfer is executed successfully!
 - https://realms.today/dao/MonkeDAO
 - https://docs.realms.today/DAO-Management/createing-DAOs/NFT-Community-DAO
 - https://nation.io/
-
-###### tags: `notes`
