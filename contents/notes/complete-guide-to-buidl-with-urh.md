@@ -4,9 +4,11 @@ tags: notes
 
 # A Complete Guide to Build a Simple Aggregator with Universal Rabbit Hole
 
-***Updated at 2022.9.29***
+**Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog), [@wei_sol_](https://twitter.com/wei_sol_), [@emersonliuuu](https://twitter.com/emersonliuuu)
 
-> See the full example [here](https://github.com/DappioWonderland/universal-rabbit-hole-example)
+***[Updated at 2022.9.29]***
+
+> **See the example repo [here](https://github.com/DappioWonderland/universal-rabbit-hole-example)**
 
 ## TL; DR
 
