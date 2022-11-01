@@ -93,7 +93,6 @@ open "https://localhost:3001?recipient=Hw7QWUA98q8jUAgbHLGJsXycPESt6jiyF4cPFjgg5
 
 3. Create a transfer request
 
-
 ## Current Challenge
 
 ### Mechanism
