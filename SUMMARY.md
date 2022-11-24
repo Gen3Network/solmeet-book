@@ -2,7 +2,7 @@
 tags: gitbook
 ---
 
-# Table of contents
+# Table of Contents
 
 - [About SolMeet](README.md)
 
@@ -21,3 +21,4 @@ tags: gitbook
 - [#11 - BUIDL an Orderbook-based DEX on Solana in 2 hours](contents/notes/buidl-orderbook-based-dex.md)
 - [#12 - A Complete Guide to Build a Simple Aggregator with Universal Rabbit Hole](contents/notes/complete-guide-to-buidl-with-urh.md)
 - [#13 - Solana Pay in Practice: The Challenge and Solution](contents/notes/solana-pay-in-practice.md)
+- [#14 - A Complete Guide to Implement an Adapter on Universal Rabbit Hole](contents/notes/complete-guide-to-implement-adapter-on-urh.md)
