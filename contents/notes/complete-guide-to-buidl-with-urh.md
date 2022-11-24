@@ -2,7 +2,7 @@
 tags: notes
 ---
 
-# A Complete Guide to Build a Simple Aggregator with Universal Rabbit Hole
+# SolMeet #12 - A Complete Guide to Build a Simple Aggregator with Universal Rabbit Hole
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog), [@wei_sol_](https://twitter.com/wei_sol_), [@emersonliuuu](https://twitter.com/emersonliuuu)
 
@@ -96,7 +96,7 @@ Following are the current supported protocols:
 
 ## Get Started
 
-Follow the [offical documentation](https://hackmd.io/@DappioWonderland/complete-guide-to-buidl-solana-dapp-with-universal-rabbit-hole) of Universal Rabbit Hole to get started
+Follow the [offical documentation](https://docs.dappio.xyz/implemtation-guide-for-protocol-developers/example-1) of Universal Rabbit Hole to get started
 
 ## References
 
