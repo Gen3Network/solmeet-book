@@ -1,12 +1,12 @@
 ---
-tags: notes
+tags: solmeet-book
 ---
 
-# Anchor: A Powerful Framework for Solana Developers
+# SolMeet #2 - Anchor: A Powerful Framework for Solana Developers
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog)
 
-***[Updated at 2022.3.31]***
+***[Updated at 2022.12.18]***
 
 > You can find the full code base [here](https://github.com/ironaddicteddog/anchor-escrow)
 
@@ -62,27 +62,26 @@ You can refer to this [doc](https://hackmd.io/@ironaddicteddog/solana-starter-ki
 
 - [Solana Helloworld](https://hackmd.io/@ironaddicteddog/solana-starter-kit#1-Hello-World)
 - [**Solana Escrow Program (using vanilla Rust)**](https://hackmd.io/@ironaddicteddog/solana-starter-kit#2-Escrow-Program-using-vanilla-Rust)
-- [Anchor Basic Tutorials](https://project-serum.github.io/anchor/tutorials/tutorial-0.html)
 
 ## Installation
 
 Install `avm`:
 
 ```bash
-$ cargo install --git https://github.com/project-serum/anchor avm --locked --force
+$ cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
 ...
 ```
 
 Install latest `anchor` version:
 
 ```bash
-$ avm install latest
+$ avm install 0.26.0
 ...
-$ avm use latest
+$ avm use 0.26.0
 ...
 ```
 
-> If you haven't installed `cargo`, please refer to this [doc](https://hackmd.io/@ironaddicteddog/solana-starter-kit#Install-Rust-and-Solana-Cli) for installation steps.
+> If you haven't installed `cargo`, please refer to this [doc](https://book.solmeet.dev/notes/solana-starter-kit#install-rust-and-solana-cli) for installation steps.
 
 ### Extra Dependencies on Linux (Optional)
 
@@ -99,7 +98,7 @@ Check if Anchor is successfully installed:
 
 ```bash
 $ anchor --version
-anchor-cli 0.22.0
+anchor-cli 0.26.0
 ```
 
 ## Escrow Program
@@ -116,22 +115,21 @@ However, there is one major difference between this exmaple and the original Esc
 
 #### Initialize
 
-![](https://i.imgur.com/VmRKZUy.png)
+![](https://hackmd.io/_uploads/Hkn1gdtuj.png)
 
-`Initializer` can send a transaction to the escrow program to initialize the Vault. In this transaction, two new accounts: `Vault` and `EscrowAccount`, will be created and tokens (Token A) to be exchanged will be transfered from `Initializer` to `Vault`.
+`Initializer` can send a transaction to the escrow program to initialize the Vault. In this transaction, two new accounts: `Vault` and `EscrowState`, will be created and tokens (Token A) to be exchanged will be transfered from `Initializer` to `Vault`.
 
 #### Cancel
 
-![](https://i.imgur.com/f6ahGXy.png)
+![](https://hackmd.io/_uploads/ry0GNdKdo.png)
 
-`Initializer` can also send a transaction to the escrow program to cancel the demand of escrow. The tokens will be transfered back to the `Initialzer` and both `Vault` and `EscrowAccount` will be closed in this case.
+`Initializer` can also send a transaction to the escrow program to cancel the demand of escrow. The tokens will be transfered back to the `Initialzer` and both `Vault` and `EscrowState` will be closed in this case.
 
 #### Exchange
 
-![](https://i.imgur.com/MzG26dm.png)
+![](https://hackmd.io/_uploads/HkhNE_tdi.png)
 
-`Taker` can send a transaction to the escrow to exchange Token B for Token A. First, tokens (Token B) will be transfered from `Taker` to `Initializer`. Afterward, the tokens (Token A) kept in the Vault will be transfered to `Taker`. Finally, both `Vault` and `EscrowAccount` will be closed.
-
+`Taker` can send a transaction to the escrow to exchange Token B for Token A. First, tokens (Token B) will be transfered from `Taker` to `Initializer`. Afterward, the tokens (Token A) kept in the Vault will be transfered to `Taker`. Finally, both `Vault` and `EscrowState` will be closed.
 
 ### Initialize the Program
 
