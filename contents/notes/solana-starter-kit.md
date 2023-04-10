@@ -1,8 +1,8 @@
 ---
-tags: notes
+tags: solmeet-book
 ---
 
-# A Starter Kit for New Solana Developer
+# SolMeet #1 - A Starter Kit for New Solana Developer
 
 **Author:** [@ironaddicteddog](https://twitter.com/ironaddicteddog)
 
